@@ -8,11 +8,16 @@ function App() {
   const [state, dispatch] = useReducer(reducer, intialState)
   // console.log(state)
   // console.log(state.todoItems)
+
+  const addToDo = toDo => {
+    dispatch({type: "ADD_TODO", payload: toDo})
+  }
+
   return (
     <div className="App">
       <h1>still works</h1>
       <TodoList propsPassedToToDoList = {state.todoItems}/>
-      <TodoForm />
+      <TodoForm addToDoPassedToForm= {addToDo}/>
     </div>
   );
 }
