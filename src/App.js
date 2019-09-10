@@ -5,10 +5,12 @@ import TodoList from './components/ToDoComponents/TodoList'
 
 function App() {
   const [state, dispatch] = useReducer(reducer, intialState)
+  // console.log(state)
+  // console.log(state.todoItems)
   return (
     <div className="App">
       <h1>still works</h1>
-      <TodoList />
+      <TodoList propsPassedToToDoList = {state.todoItems}/>
     </div>
   );
 }

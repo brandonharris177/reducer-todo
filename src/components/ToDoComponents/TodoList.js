@@ -1,9 +1,11 @@
 import React from 'react'
 
 const ToDoList = (props) => {
+    console.log(props.propsPassedToToDoList)
     return (
         <>
-        ToDoList
+        {props.propsPassedToToDoList.map(todoItem => 
+            <div key = {todoItem.id}>{todoItem.item}</div>)}
         </>
     );
 };
