@@ -7,7 +7,10 @@ const ToDoList = ({ propsPassedToToDoList, toggleToDo }) => {
     return (
         <>
         {propsPassedToToDoList.map(todoItem => 
-            <div key = {todoItem.id} onClick = {() => toggleToDo(todoItem.id)}>{todoItem.item}</div>)}
+            <div 
+            key = {todoItem.id} 
+            onClick = {() => toggleToDo(todoItem.id)} 
+            className ={todoItem.completed ? "completed" : "" }>{todoItem.item}</div>)}
         </>
     );
 };
