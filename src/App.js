@@ -24,7 +24,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>still works</h1>
+      <h1>To Do List:</h1>
       <TodoList propsPassedToToDoList={state.todoItems} toggleToDo ={toggleToDo}/>
       <TodoForm addToDoPassedToForm= {addToDo} clearCompleted = {clearCompleted}/>
     </div>
