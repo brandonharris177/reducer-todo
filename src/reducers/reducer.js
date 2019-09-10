@@ -28,17 +28,18 @@ export function reducer (state, action) {
              };
         case "TOGGLE_TODO":
             //console.log(action.payload)
+            // console.log(state.todoItems)
             return {
                ...state, 
                 todoItems: state.todoItems.map(item => {
                     if (item.id === action.payload && item.completed === true ){
-                        console.log("if", item.completed)
+                        console.log("becomes false")
                         return {
                             ...item,
                             completed: false
                         }
                       } else if (item.id === action.payload && item.completed === false ){
-                        console.log("if else ", item.completed)
+                        console.log("becomes true")
                         return {
                             ...item,
                             completed: true
@@ -46,6 +47,18 @@ export function reducer (state, action) {
                       } else {
                         return item;
                     }
+                })
+            }
+        case "CLEAR_COMPLETED":
+            // console.log(state.todoItems)
+            return {
+                ...state,
+                todoItems: state.todoItems.filter(item => {
+                    if (item.completed === true) {
+                        return false
+                    }  else {
+                        return true
+                    }  
                 })
             }
         default: return state;

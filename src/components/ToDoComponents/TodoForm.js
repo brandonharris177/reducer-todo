@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-const TodoForm = ({addToDoPassedToForm}) => {
+const TodoForm = ({addToDoPassedToForm, clearCompleted}) => {
     // console.log(addToDoPassedToForm)
     const [toDo, setToDo] = useState("");
 
@@ -23,7 +23,7 @@ const TodoForm = ({addToDoPassedToForm}) => {
                 value = {toDo}
                 onChange = {handleChange}/>
             <button type = "submit">Submit</button>
-            {/* <button onClick = {}>Clear Completed</button> */}
+            <button onClick = {clearCompleted}>Clear Completed</button>
         </form>
     )
 }

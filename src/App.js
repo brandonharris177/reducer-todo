@@ -17,11 +17,16 @@ function App() {
     dispatch({type: "TOGGLE_TODO", payload: id})
   }
 
+  const clearCompleted = (event) => {
+    event.preventDefault();
+    dispatch({type: "CLEAR_COMPLETED"})
+}
+
   return (
     <div className="App">
       <h1>still works</h1>
       <TodoList propsPassedToToDoList={state.todoItems} toggleToDo ={toggleToDo}/>
-      <TodoForm addToDoPassedToForm= {addToDo}/>
+      <TodoForm addToDoPassedToForm= {addToDo} clearCompleted = {clearCompleted}/>
     </div>
   );
 }
