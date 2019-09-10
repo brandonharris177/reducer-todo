@@ -1,7 +1,7 @@
 import React from 'react'
 
 const ToDoList = (props) => {
-    console.log(props.propsPassedToToDoList)
+    // console.log(props.propsPassedToToDoList)
     return (
         <>
         {props.propsPassedToToDoList.map(todoItem => 
