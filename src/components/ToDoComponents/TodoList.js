@@ -1,13 +1,16 @@
 import React from 'react'
 
-const ToDoList = (props) => {
-    // console.log(props.propsPassedToToDoList)
+const ToDoList = ({ propsPassedToToDoList, toggleToDo }) => {
+    // console.log(propsPassedToToDoList)
+    // console.log(toggleToDo)
+
     return (
         <>
-        {props.propsPassedToToDoList.map(todoItem => 
-            <div key = {todoItem.id}>{todoItem.item}</div>)}
+        {propsPassedToToDoList.map(todoItem => 
+            <div key = {todoItem.id} onClick = {() => toggleToDo(todoItem.id)}>{todoItem.item}</div>)}
         </>
     );
 };
 
 export default ToDoList
+

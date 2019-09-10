@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 
 const TodoForm = ({addToDoPassedToForm}) => {
+    // console.log(addToDoPassedToForm)
     const [toDo, setToDo] = useState("");
 
     const handleSubmit = (event) => {
